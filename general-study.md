@@ -31,36 +31,36 @@ But if python it's installed, you can go ahead and write and run a python progra
 Indentation refers to the spaces at the beginning of a code line. In other programming languages, indentation is used to make code readable while in python, it is used to define a block of code. The number of spaces that show indentation in python is optional depending on what the programmer wants but the default number of spaces used in python is four (4). But once there is no indentation, python throws an error. 
 ### python variables
 In python, a variable is created when you assign a value to it. For instace:
-- x = 5
-- y = "Hello, World!"
+` x = 5`
+` y = "Hello, World!"`
 python has no command for declaring a variable
 ### comments
 Comments start with a #, and python will render the rest of the line as a comment. Unlike other programming laguages, python does not have a special syntax to write a multiline comments, you need to add the # at the beginning of every line you want to be seen by python as a comment.
 ## python statements
 A computer program is a list of "instructions" to be executed by a computer. In a programming language, these programming instructions are called statements. For instance: the following statement prints the text "Python is fun!" to the screen:
-- print("Python is fun!")
+`print("Python is fun!")`
 The above is termed a statement and when you have alot of them telling the computer what to do, you call them many statemensti n python. They usually end when the line ends, and they are execute one by one, in the same order as they are written.
 ### semicolons (optional, rarely used)
 They are optional in python, you can write multiple statements on the same line by separating them with ";". but this is not oftenly used because it makes it hard to read code that is written with it.
 ## python output/print
 ### print text
 The function that allows for text to be printed out is: 
-- print()
+` print()`
 It takes in what you want to be printed and prints it.
 ### print without a new line
 By default, print() ends with with a newline. But if you want to print without a new line, you can use *** end *** parameter. For instance:
-- print("hello world", end=" ")
+` print("hello world", end=" ")`
 The above text will be printed without a new line.
 ### print numbers
 Numbers can still be printed using the same function. The difference here is that unlike text, you would not have to put the number surrounded by quotes.
 ### mix text and numbers
 You can also combine both text and numbers and print them in the same sentece. Here is a similar syntax:
-- print("I am", 25, "years old.")
+` print("I am", 25, "years old.")`
 ### casting
 This is the process of specifying the data type of a variable while creating and storing a value to it. for instance:
-- x = str(3) # x will be '3'
-- y = int(3) # y will be 3
-- z = float(3) # z will be 3.0
+` x = str(3) # x will be '3'`
+` y = int(3) # y will be 3`
+` z = float(3) # z will be 3.0`
 ### get the type
 To get the type of a variable, you can do it using the type() function. For instance:
 - print(type(x)) 
@@ -78,36 +78,42 @@ there are certain rules governing the naming of variables and they include:
 - a variable name cannot be any of the python keywords
 ### multi words variable names
 variable names with more than one word have a specific pattern of how they are named or given. They take (first) the camel case style, for instance:
-- myVariableName = "John"
+`myVariableName = "John"`
 (second), they take the pascal case, for instance:
-- MyVariableName = "John"
+` MyVariableName = "John"`
 (third), they take the snake case, for instance:
-- my_variable_name = "John"
+` my_variable_name = "John"`
 ## Assign multiple values
 more than one value can be assigned to it's variable on the same line. For instance:
-- x, y, z = "Orange", "banana", "cherry"
+` x, y, z = "Orange", "banana", "cherry"`
 ### one value to multiple variables
 You can also assign the same value to multiple variables in one line. For instance:
-- x = y = z = "Orange"
+`x = y = z = "Orange"`
 ### unpack a collection
 Unpacking is a process in python whereby you have a collection of values in a list, tuple etc, and you extract the values into variables. For instance:
+```python
 fruits = ["apple", "banana", "cherry"]
 x, y, z = fruits
 print(x)
 print(y)
 print(z)
 ## global variables
+```
 These are varibles that are created outside of a function. A global variable can be used by anyone, both inside and outside of functions. If you create another variable in a function that carries the same name as a global variable, the one you created in the function will be used once you call that variable, but outside that very function you created the function, it will be the global varible that would be called once you mention the name of the variable.
 ### the global keyword
 Normally, when you create a variable inside a function, such a variable is said to be local, and can only be used inside that function. To create a global variable inside a function, you can use the global keyword. Here is a sytax of it:
+
+```python
 def myfunc():
   global x
   x = "fantastic"
 
 myfunc()
 
-print("Python is " + x)#
+print("Python is " + x)
+```
 In this example, you will understand that the x variable is made global using the global keyword and then it can be used in another function as well and it will still be fine. And also, when you have a global variable and you want to change the value of the variable, you can still use the global keyword to change or alter the value of that variable. for instance:
+```python
 x = "awesome"
 def myfunc():
     global x
@@ -115,4 +121,4 @@ def myfunc():
 
 myfunc()
 print("python is " + x)
-
+```
