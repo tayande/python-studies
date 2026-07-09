@@ -122,3 +122,61 @@ def myfunc():
 myfunc()
 print("python is " + x)
 ```
+### Python data types
+A data type is what tells python the kind a value a variable is carrying, how it can be used and what operations to perform on it. For instance, assuming a variable is carrying a value and the type of that value is an int, that value can only undergo a given number of operations based on how python allows int to be treated, it can not be treated or worked with like a str or a bool.
+### Build-in data types in python 
+Python has the following data types which are built-in by default, and they are grouped as follows:
+Text Type: 	    str
+Numeric Types: 	int, float, complex
+Sequence Types: list, tuple, range
+Mapping Type: 	dict
+Set Types: 	    set, frozenset
+Boolean Type: 	bool
+Binary Types: 	bytes, bytearray, memoryview
+None Type: 	    NoneType
+### Getting the type
+You can get the data type of a variable by using the type() function. 
+### Python numbers
+There are three numeric types in python:
+- int for instance: x = 1
+- float for instance y = 2.8
+- complex for instance z = 1j
+#### Int
+This is a whole number, positive or negative, without decimals, of unlimited length. For instance
+- 1
+- 34543524543
+- -34532
+#### Float
+Float, or floating point number is a number, positive or negative, containing one or more decimals. for instance:
+- 1.23
+- 1.0
+- -234.34
+float can also be scientific numbers with an "e" to indicate the power of 10. For instance:
+#### complex
+They are written with a "j" as the imaginary part: for instance:
+- x = 3 + 5j
+- y = 5j
+- z = -5j
+#### type conversion
+this is an operation that is done on a variable to change the data type of its value. for instance:
+```python
+x = 1
+y = 2.8
+z = 1j
+# to convert from int to float:
+a = float(x)
+# to convert from float to int:
+b = int(y)
+# to convert from int to complex:
+c = complex(x)
+```
+#### Random number
+Pythonn does not have a random() function to make a random number, but it does have a built-in module called random that can be used to make random numbers. for instance:
+```python
+import random
+
+print(random.randrange(1, 10))
+```
+
+### Python casting
+Casting can be defined as the process of explicitly defining the data type of a value as you assign a variable to it.
