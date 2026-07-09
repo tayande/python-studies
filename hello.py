@@ -1,15 +1,20 @@
-import sys
-
-print('hello, world')#
-
-if 5 > 4:
-    print('five is greater than four!')
-else:
-    print('five is not greater than four')
+# day 1: exercise one 
+name = "Ayande David"
+language = "Python"
+age = 24
+print(f"Hello, {name}!")
+print(f"You are {age} years old.")
+print(f"Today you are learning {language}.")
+print(f"From Go to {language}, let's go.")
 print()
 
-fruits = ["apple", "banana", "cherry"]
-x, y, z = fruits
-print(x)
-print(y)
-print(z)
+# exercise two:
+# break indentation on purpose
+
+def check_number(n):
+    if n > 0:
+        print("positive")
+    else:
+        print("not positive")
+
+check_number(5)
