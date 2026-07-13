@@ -82,3 +82,13 @@ describe(42)          # int has NO length → crashes
 The function here which is describe does not care whether an object is an int, or float, or str, it just calls the len(), on it and if the object supports the operation, then the code runs, if it does not, then you get an error. *** duck typing *** cares about capability and not declared identity. How a variable is declared or named does not really matter, it is how such a variable can be used that matters. By word of definition: 
 *** duck typing *** is a programming concept where an object's suitability is determined by the presencce of certain properties or characteristics, rather than it actual inheritance or class type, or naming or data type. The name comes from the phrase "if it walks like a duck and quacks like a duck, then it must be a duck".
 ### Multiple assignment
+Python allows for the assignment of more than one variable in a single line, matching values to names by position. For instance 
+```python
+x, y, z = 1, 2, 3
+print(x, y, z) # 1 2 3
+```
+You can also assign the same value to multiple names at once: 
+```python
+x = y = z = 0
+print(x, y, z) # 0 0 0
+```
