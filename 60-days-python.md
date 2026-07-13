@@ -35,3 +35,50 @@ def greet(name):
 If you observe, when a python script or code is running and along the line there is an error, the correct lines before the error will be printed out until it gets to where the error occured and that is where you will see the error message instead of the actual output that was expected. This is the cleares picture that sets python apart from other languages which are said to be compile languages. For instance, when running GO code, if there is an error at all in the program, it won't even run in the first place until you correct the error, this shows how go first of all translates the whole human code into machine code and checks for errors at that translation time, before a go code executes, there are usually not errors, if not it won't execute in the first place. So this scenario simplifies the whole compile and interpreted languages stuff. Here is what happens in python: when you write a program in python in a .py file, the CPython takes the .py file, reads from top to bottom, converts it to bytecode as it reads and then immediately executes the bytecode. 
 #### Why REPL matter beyond "it's cool"?
 Because it's direct window into that one-condition-motion model. Every line you type gets compiled-and-executed immediatel, one line at a time, and the result is kep alive in the lines.
+### Casting
+This is defined as the process of explicitly converting the data type of a value to another one, producing a new value of the target type, done by calling a conversion functio: int(), str(), float(), etc, rather than happening automatially.
+## Day 2: Variable and dynamic typing
+### Varible assignment. No declarations, period
+In go, creating a variable allows you to creat it and at the same time, assing the data type to it that is unchanged, but in python the declaration is a bit different, python has no declaration step at all, assignment is creation. For instance: ` age = 24 `.
+This single line does everything. it creates the age variable, creates the integer value of 24 sonewhere in memory, and makes age point at it. Note that python already knows that the age is an int. 
+### Python variables
+In python, a variable is simply said to be a container that holds a particular value with a given data type. It is more like an object that points to a particular value in memory and uses that value whenever it likes. The variable name does not own a fixed size slot (value), but it's just a reference to it. 
+### Multiple names can point at the same object simultaneously
+```python
+>>> a = [1, 2, 3]
+>>> b = a
+>>> b.append(4)
+>>> a
+[1, 2, 3, 4]
+```
+What happened here was that the b did not copy the a's content, it made b a second object on it's own but then it is pointing at the same content as a or it has the same content just as a.
+### Dynamic vs Go's static typing
+- Go is statically typed: This means that data types are fixed and checked before the program runs, at compile time. The compiler refuses to build if types don't line up.
+- Python is dynamically typed: types are checked while the program runs, at the moment each line actually executes. There is no seperate check-everything-first phase.
+### type(). Checking what an object actaully is, live.
+This function: type(), is used to check or ask what kind of value or object is this, right now, at this moment. This means that it is only at the moment you use it that it will give you the data type of such an object, and that object may change later on, and once it changes, using type() on it again will still give you the data type of it at that particulart time, and this time, it might be different from the earlier one, since you changed the type. For instance:
+```python
+>>> type(25)
+<class 'int'>
+>>> type(3.14)
+>class 'float'
+>>> type("hello")
+<class 'st'>
+>>> type([1, 2, 3])
+<class 'list'>
+```
+### Duck typing: The philosophy behind why python does not care about declared types.
+*** If it walks like a duck and quacks like a duck, then it is a duck.*** 
+Python does not care what data type something or an object is, it only cares whether such an object supports the operations and behaviours you're trying to use it for, at the moment you use it. For instance:
+```python
+def describe(thing):
+    print(f"Length is {len(thing)}")
+
+describe("hello")     # str has a length → works
+describe([1, 2, 3])   # list has a length → works
+describe({"a": 1})    # dict has a length → works
+describe(42)          # int has NO length → crashes
+```
+The function here which is describe does not care whether an object is an int, or float, or str, it just calls the len(), on it and if the object supports the operation, then the code runs, if it does not, then you get an error. *** duck typing *** cares about capability and not declared identity. How a variable is declared or named does not really matter, it is how such a variable can be used that matters. By word of definition: 
+*** duck typing *** is a programming concept where an object's suitability is determined by the presencce of certain properties or characteristics, rather than it actual inheritance or class type, or naming or data type. The name comes from the phrase "if it walks like a duck and quacks like a duck, then it must be a duck".
+### Multiple assignment

@@ -179,4 +179,12 @@ print(random.randrange(1, 10))
 ```
 
 ### Python casting
-Casting can be defined as the process of explicitly defining the data type of a value as you assign a variable to it.
+This is defined as the process of explicitly converting the data type of a value to another, producing a new value of the target type. It is done by calling a conversion function: int(), str(), float(), etc, rather than happening automatically. For instance:
+```python
+>>> age = "25"
+>>> int(age)
+25
+>>> age
+'25'
+```
+##
