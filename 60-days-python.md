@@ -92,3 +92,11 @@ You can also assign the same value to multiple names at once:
 x = y = z = 0
 print(x, y, z) # 0 0 0
 ```
+### The classic swap
+for instance:
+```python
+a = 1
+b = 2
+a, b = b, a
+print(a, b)   # 2 1
+```
