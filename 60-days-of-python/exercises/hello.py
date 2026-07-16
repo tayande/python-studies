@@ -63,3 +63,4 @@ int(True)
 bool(0)
 bool("False")   # deliberately tricky — a non-empty string is truthy REGARDLESS of what it says
 # done with exercise two.
+# The last one is worth noticing something about, it still returns true becaues a bool value with an empty string is the only one that is seen as a false value, so far as it has a value and the value has a sting that is not empty, it will return True even though ther is False written as the string.
