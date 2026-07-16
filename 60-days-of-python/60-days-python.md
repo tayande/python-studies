@@ -100,3 +100,64 @@ b = 2
 a, b = b, a
 print(a, b)   # 2 1
 ```
+## Day 3: Core data types
+### int
+In Go, integers have fixed bit-widths which include: int8, int32, and int64, and if a value contained in a variable exceeds this width, you get an overflow(silent sources of bugs). However, in python, int covers for all integers and can contain all numbers negative or positive so far as they are whole numbers and not decimals.
+### float
+This has or carries the same idea and work ethics like the int. All decimal numbers can be contained in the float, negatve or positive so far as they have a decimal point in them.
+### str
+This refers to all strings, (which can be defined as an immutable/unchangeable sequence of unicode characters used to handle textual data). Or simply: (a string is an unchangeabel sequence of characters seen and treated as texts).
+Python strings have something unique, they support some arithmetic operations which are:
+- concatenation:= Done with the + sign
+for instance:
+```python
+>>> "david" + " " + "ayande"
+'david ayande'
+```
+- repetation:= Done with the * sign
+for instance:
+```python 
+>>> "ha" * 3
+'hahaha'
+```
+### bool
+This data type is technically a subclass of int.
+From the knowledge of Go, bools values are either True of False and it's also the same with python as well, however, those in python here behave a bit different from those of Go.
+Bool in python is a subclass of int where True behaves as 1 and False behaves as 0
+### None
+This is similar to Go's nil but different in how they are used. None is python's absence of a value. The difference between None and Go's nil is that nil can only be used or applied to specific types, such as functions, slices, maps, pointers and interfaces. A plain int in Go can never be nil, it won't even compile in the first place, if a value is not set, it defaults to 0 which is the zero value of int. while None is a single, universal singleton object that any variable can point to, regardless of what it would otherwise hold. for instance:
+```python
+>>> x = None
+>>> type(x)
+<class 'NoneType'>
+>>> x = 5
+>>> x = None   # This is totally fine, because any variable can go back to None 
+```
+*** note ***
+The only way to ckeck for a none value is: is and not: ==:
+```python
+>>> x = None
+>>> x is None
+True
+```
+And also, python has no concept of a zero value. In go, if you declare a variable and not assign a value to it, it would assume the zero value of it's data type, but in python, if you don't assign a value to a declared variable, then there would be an error and if you want a variable to carry the None value, you have to explicitly say so or make it so.
+### Type coercion rules
+Coercion if the a process where by python allows mixing types in one operation.
+#### Numeric coercion
+This is when you mix ints with values of different or other data types and it still works. For instance:
+```python
+>>> 5 + 3.0     # int + float → float
+8.0
+>>> True + 5    # bool + int → int
+6
+>>> True + 3.0  # bool + float → float
+4.0
+```
+### Arithmetic operators
+- addition: + 
+- subtraction: - 
+- multiplication: *
+- true division: / (7 / 32.3333333333333335)
+- floor division: // (7 // 32)
+- modulo (remainder): % (7 % 31)
+- exponentiation: ** (7 ** 3343)
