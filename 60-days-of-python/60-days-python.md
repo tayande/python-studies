@@ -191,3 +191,148 @@ This is used for controlling decimal places, padding etc. F-strings use a (:) fo
 >>> f"{5:03d}"           # zero-padded to 3 digits
 '005'
 ```
+### Escape sequences
+```python
+>>> print("Line one\nLine two")
+Line one
+Line two
+>>> print("Tab\tstop")
+Tab	stop
+>>> print("Quote: \"hello\"")
+Quote: "hello"
+>>> print("Backslash: \\")
+Backslash: \
+```
+- \n: newline
+- \t: tab
+- \\: literal backslash
+- \" and \': escape quotes
+They are all identical to Go's escape sequences.
+### Raw strings
+They are prefix with r to disable escape processing entirely, useful for regex patterns or windows file paths. For instance:
+```python
+>>> print(r"C:\new_folder\test")
+C:\new_folder\test
+>>> print("C:\new_folder\test")
+C:
+ew_folder	est          # \n and \t got interpreted as escapes — broken!
+```
+### Multiline strings. Triple quotes
+This works just like how the println does in golang. for instance, you have to write three statements on three individual lines and once you use the println function, your statements would be written just how you want them to, but in python, you can write the three statements in the manner you want them to appear when printed and then surround them with tripple double quotes or tripple single quotes and it would work fine. Here is a similar syntax:
+```python
+>>> message = """This is line one
+... This is line two
+... This is line three"""
+>>> print(message)
+This is line one
+This is line two
+This is line three
+>>> 
+```
+Tripple double quotes or triple single quotes lets a string span multiple lines literally, preserving the newlines exactly as typed.
+### Indexing
+Strings are indexed sequences which means a string's characters can be accessed by their respective indexes.
+```python
+>>> s = "Python"
+>>> s[0]
+'P'
+>>> s[5]
+'n'
+```
+### Negative indexing
+just like the first index starts from 0, then the second 1, the third 2 and so on, starting the count of indexing from behind (that is from the end of the string to the beginning), the last index is -1, the second to the last is -2 and so on.
+```python
+>>> name = "python"
+>>> name[-1]
+'n'
+>>> name[-2]
+'o'
+```
+### Slicing 
+Basic slice: s[start:stop]. This extracts s substing from start up to (not including) stop. Here is a similar syntax:
+```python
+>>> s = "Python"
+>>> s[1:4]
+'yth'
+```
+### Omitting start or stop
+```python
+>>> s[:3]      # from start through index 2 which is the same as starting from the begining and stoping on character before the third index
+'Pyt'
+>>> s[3:]      # from index 3 to the end
+'hon'
+>>> s[:]       # the whole string (a full copy)
+'Python'
+```
+### The third piece-step
+```python
+>>> s[::2]     # every 2nd character, from start to end
+'Pto'
+>>> s[1::2]    # every 2nd character, starting at index 1
+'yhn'
+```
+### Reversing a string
+`s[::-1]` is used in python to reverse a string.
+```python
+>>> s[::-1]
+'nohtyP'
+```
+### Negative indeces work inside slices too
+```python
+>>> s[-3:]     # last 3 characters
+'hon'
+>>> s[:-1]     # everything except the last character
+'Pytho'
+```
+*** note ***
+slicing never gives an error in python, it just works with what exists.
+### Common string methods
+strings in python come with built in methods (functions attached to the string object itself, called with .methodname())
+### .upper() / .lower(): case conversion
+```python
+>>> "python".upper()
+'PYTHON'
+>>> "PYTHON".lower()
+'python'
+```
+### .strip(): removes leading/trailing whitespace (or specified characters)
+```python
+>>> "   hello   ".strip()
+'hello'
+>>> "xxhelloxx".strip("x")
+'hello'
+```
+Related: .lstrip() (left only), .rstrip() (right only).
+### .replace(old, new)
+This function swaps all occurrences:
+```python
+>>> "I like G".replace("Go", "Python")
+'I like Python'
+```
+### .find(substring)
+This function returns the index of the first match, or -1 if not found:
+```python
+>>> name = "humble"
+>>> name.find("mb")
+2
+>>> name.find("xy")
+-1
+```
+It returns -1 on failure rather than raising an error.
+### .split(seperator)
+This is used to break strings into a list of substrings:
+```python
+>>> "one,two,three".split(",")
+['one', 'two', 'three']
+>>> "hello world foo".split()     # no argument = split on any whitespace
+['hello', 'world', 'foo']
+```
+If no argument is provided in the function, then it would split by whitespaces. (working just like strings.Fields from Go)
+### .join(interable)
+This function works as a reverse of .split(). You call .join() on the seperator, passing the list as the argument:
+```python
+>>> ", ".join(["one", "two", "three"])
+'one, two, three'
+```
+It's read as, "take the string, and use it to join together the items in this list".
+*** note *** since strings are immutable, any one of these methods returns a brand-new string, none of them modify the original one.
