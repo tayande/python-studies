@@ -161,3 +161,33 @@ This is when you mix ints with values of different or other data types and it st
 - floor division: // (7 // 32)
 - modulo (remainder): % (7 % 31)
 - exponentiation: ** (7 ** 3343)
+## Day 4: Strings
+A string is defined as an unchangeable sequence that is treated and seen as a text.
+### strings literals
+Python allows the use of single and double quotes to literally describe a string. For instance:
+- name = "Ayande"
+- name = 'David'
+*** There is another behavior that strings in python allows: ***
+Here is a syntax of it:
+- quote = "It's a nice day"
+- quote = 'She said "hello"'
+If you look clearly at the examples above, go cannot just allow such a behaviour unless you use a formating verb to write something like this especially the second example. That is bacause go only uses the double quotes to define it's strings.
+### f-strings
+This works the same with Go's fmt.Sprintf, but embedded directly. Just like you use formatting verbs in go, python's f-strings embed the actual expressions directly inside the string, prefixed with f: For instance:
+- 
+```python
+result = f"Hello, {name}! You are {age} years old"
+```
+The variable result has now become one that contains the expression as written and shown above.
+Between the braces, you can put any valid expression inside not just a varible name, function calls, arithmetics, method calls, would all work. 
+### Formatting specifiers
+This is used for controlling decimal places, padding etc. F-strings use a (:) followed by a format spec, conceptually similar to Go's verb flags but different syntax:
+```python
+>>> pi = 3.14159265
+>>> f"{pi:.2f}"          # 2 decimal places
+'3.14'
+>>> f"{1000000:,}"       # thousands separator
+'1,000,000'
+>>> f"{5:03d}"           # zero-padded to 3 digits
+'005'
+```
