@@ -61,5 +61,73 @@ if result == word:
     print("The text is a palindrome")
 else:
     print("The text is not a palindrome")    
-
+print()
+print("number 5")
 # 5: Remove all vowels from a string
+def remove(text: str):
+    if len(text) == 0:
+        print("text cannot be empty")
+    result = ""
+    vowels = "aeiou"
+    for char in text:
+        if char in vowels:
+            continue
+        else:
+            result += char
+    return result
+print(remove("In the land of myth"))
+print()
+print("number 6")
+
+# 6: count the occurences of a specific word without using .count().
+def counting(text: str, target: str):
+    if len(text) == 0: 
+        print("text cannot be empty")
+    if len(target) == 0:
+        print("Target word cannot be empty")
+    count = 0
+    splitted = text.split()
+    for word in splitted:
+        if word == target:
+            count = count + 1
+    return count
+
+text = "how many the are in the sentence"
+target = "the"
+result = counting(text, target)
+print(f"'{target}' appears {result} times in '{text}'")
+print()
+print("number 7")
+
+# 7: Extract the domain from an email address
+def check(email: str):
+    if len(email) == 0:
+        print("please provide an email")
+    new_email = email.split("@")
+    return new_email[-1]
+
+print(check("ayande@gmail.com"))
+# this works just fine but to add more to it
+
+def check(email: str):
+    if email == "":
+        print("email can not be empty")
+    return email.split("@")
+email = "ayandedavid2002@gmail.com"
+result = check(email)
+first_part = result[0]
+second_part = result[-1]
+print(f"The username in '{email}' is '{first_part}' and the domain is '{second_part}'")
+print()
+print("number 8")
+# 8: check if a string starts and ends with the same character
+def check(word: str):
+    if word == "":
+        print("word cannot be empty")
+    if word[0] == word[-1]:
+        return "The first character is the same with the last character"
+    else:
+        return "The first character is not the same with the last one"
+print(check("level"))
+print(check("now"))
+print()
