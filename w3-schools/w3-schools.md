@@ -187,4 +187,52 @@ This is defined as the process of explicitly converting the data type of a value
 >>> age
 '25'
 ```
-##
+### Python strings
+In python, a string is an unchangeable or immutable sequence that is seen and treated by python as a text. It is either surrounded by double or single quotes.
+### Multiline strings
+A multiline string is assigned by surrounding it with three quotes, either single or double.
+For instance:
+```python
+>>> name = """In the land of myth
+... and a time of magic
+... the destiny of a great kingdom 
+... lies on the shoulders of a young boy
+... his name, Merlin!!!"""
+>>> print(name)
+In the land of myth
+and a time of magic
+the destiny of a great kingdom 
+lies on the shoulders of a young boy
+his name, Merlin!!!
+>>> 
+```
+### looping through a string
+Since strings are arrays, we can loop through them using the for loop:
+```python
+name = "Ayande"
+for i, char in enumerate(name):
+    print(f"{i}: {char}")
+```
+And:
+```python
+name = "David"
+for char in name:
+    print(char)
+```
+### check string
+To check if a certain phrase or a character is present in a string, we can use the keyword "in". And an if statement, you would be able to check is an expression is in a text or not. for instance:
+```python
+text = "The best things in life are free!"
+if "free" in text:
+    print("Yes, 'free' is present.")
+else:
+    print("No, 'free' is not present.")
+```
+Also, if you want to check if it does not exist or not:
+```python
+text = "In the land of myth"
+if "the" not in text:
+    print("'The' is not present")
+```
+### python escape characters
+An escape character is a backlash \ followed by the character you want to insert.
