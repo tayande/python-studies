@@ -336,3 +336,72 @@ This function works as a reverse of .split(). You call .join() on the seperator,
 ```
 It's read as, "take the string, and use it to join together the items in this list".
 *** note *** since strings are immutable, any one of these methods returns a brand-new string, none of them modify the original one.
+## Day 5: I/O operators
+### print()
+This works like Go's fmt.Println() but it is more powerful than it. It just takes in an argument you wish to display or print out and it does it's job.
+### sep
+This controls what goes between multiple printed items. (Default is a single space). Here is a syntax:
+```python 
+>>> print("a", "b", "c")
+a b c
+>>> print("a", "b", "c", sep="-")
+a-b-c
+```
+Go's fmt.Println() always joins arguments with a single space, no exceptions, but using both print() and sep in python would allow you specify what is it you want to seperate or join your argumenst together as you print them out.
+### end
+This controls what gets printed after everything, instead of the default trailing newline. Here is a syntax of how it is used:
+```python
+>>> print("hello", end="")
+hello>>> print("world")     # note: no newline happened after "hello"
+helloworld
+>>> print("hello", end=" | ")
+hello |
+```
+In go, you have the fmt.Println() that always give a newline at the end of a printed argument, and when you don't want one, you have to explicitly tell by using the fmt.Print() instead, but python gives one powerful output tool that allows you to modify and work with your arguments to be printed just how you want them to. For instance:
+```python
+>>> for i in range(3):
+...     print(i, end=" ")
+0 1 2
+```
+You can combine both, and mix in as many positional values as required:
+```python
+>>> print("x", "y", "z", sep=", ", end=".\n")
+x, y, z.
+```
+### input()
+This is the function that is used to read user input mainly from the terminal. for instance:
+```python
+>>> name = input("Enter your name: ")
+Enter your name: Ayande
+>>> name
+'Ayande'
+```
+input() displays the prompt string but it's not necessary, you can call input() with no argument at all and it would still work fine, it waits for the user to input anything at all and then press enter, and it returns whatever the user entered or typed.
+One thing worth taking note of is that input() returns a string, no matter what the user types. For instance you need the user to input his age and of course age is always a number, but input() would receive it as a string anyways, it is when you want to use it in your program that you have to convert it to an int and then use it as you want. Here is a syntax of how to convert an input from string to int:
+```python
+age = int(input("Enter your age: "))
+```
+### comparison operators
+The comparison operators in python are basically the same to those in go and they behave the same way too. They include:
+```python
+==   equal to
+!=   not equal to
+<    less than
+>    greater than
+<=   less than or equal to
+>=   greater than or equal to
+```
+### Logical operators
+These are not symbols, theses are: and/or/not
+- and : &&
+- or : ||
+- not : !
+Python uses english words instead of symbolic operators here. so always take note, instead of trying to use the symbols, use the english letters for them and they would work fine.
+There is another behaviour this operands have, "or" returns the first truthy value it finds (or the last value if none are truth), while "and" returns the first falsy value it finds (or the last value, if all are truth). 
+### Chained comparisons
+In Go, you cannot chain comparisons but its done in python:
+```python
+>>> x = 5
+>>> 1 < x < 10
+True
+```
