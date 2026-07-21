@@ -405,3 +405,4 @@ In Go, you cannot chain comparisons but its done in python:
 >>> 1 < x < 10
 True
 ```
+## Day 6 - 7: Week 1 review + cumulative exercises 
