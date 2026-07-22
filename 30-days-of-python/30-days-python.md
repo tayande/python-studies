@@ -25,5 +25,44 @@ They store data in a computer memory. Mnemonic variables are recommended while w
 - A variable name must start with a letter or the underscore character
 - A variable name cannot start with a number
 - A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
-- Variable names are case-sensitive (firstname, Firstname, FirstName and FIRSTNAME) are different variables)
-*** note *** that even though you can follow any of the naming rules to name your variables, it is necessary to understand that the standard naming other programmers use is: variable_name
+- Variable names are case-sensitive (firstname, Firstname, FirstName and FIRSTNAME) are different variables
+*** note *** that even though you can follow any of the naming rules to name your variables, it is necessary to understand that the standard naming other programmers use is the snake case style shown below: 
+- variable_name
+For a fucntion, the argument it takes is said to be the value which can be passed or put inside the function parenthesis. for instance:
+- print("Ayande Terngu David")
+- len("Terngu")
+### Declaring multiple varibles on a single line.
+Multiple varibles can be declared on the same line as shown below:
+```python
+first_name, last_name, country, age, is_married = 'Ayande', 'Terngu', 'Canada', 25, False
+
+print(first_name, last_name, country, age, is_married)
+print('First name:', first_name)
+print('Last name: ', last_name)
+print('Country: ', country)
+print('Age: ', age)
+print('Married: ', is_married)
+```
+### Getting user input
+The built-in function used to obtain user input from the terminal is the input() function. Here is a similar syntax  of how it is used:
+```python
+name = input("Enter you name: ")
+age = int(input("How old are you? "))
+```
+###  Data types
+Data types helps tell us what a value of a variable really is, how to work with them and how they behave (it's properties)
+The data type of a value can be checked using the type() function. Here is a syntax of how it is used:
+```python
+print(type("Terngu"))
+```
+### Casting
+This is defined as the process of converting one data type to another. In essence, if you have an int, and you need to behave as a float, you can cast it to become the float you need it to be. There are special functions that allow us to do the casting as well and they include:
+- int() - converting to integers
+- float() - converting to decimals
+- str() - converting or casting to strings
+- list() - converting or casting to list
+### Numbers in python
+We have different number types in python and they include:
+- integers: These are refered to as whole numbers
+- float: Theser are refered to as numbers with decimal points
+- complex numbers: for example: 1 + j, 2 + 4j, 1- 1j
