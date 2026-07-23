@@ -406,3 +406,83 @@ In Go, you cannot chain comparisons but its done in python:
 True
 ```
 ## Day 6 - 7: Week 1 review + cumulative exercises 
+
+## Day 8: Conditionals
+when doing or working with conditionals, it is similar with the ones in Go. The if, else, elif (instead of else if in Go), as they work just fine.
+### No switch statement
+Go has a built-in switch statement for multi-branch dispatch on a single value. Unlike other programming languages, python does not have or support the switch statement but it has something that works just like it and that it the match statement. Below is a similar syntax of how it is written and used:
+```python
+status_code = 404
+
+match status_code:
+    case 200:
+        print("Success")
+    case 404:
+        print("Not Found")
+    case 500:
+        print("Server Error")
+    case _:
+        print("Unknown Status")  # The underscore acts as the 'default' case
+```
+There are three things worth taking note of here:
+- No break needed: Python automatically exits the match block ofter a case is hit. You dont have to exit yourself. 
+- The default case: The underscore character (case_:) handles anything that didn't match the list above. It works just like the default block does in other programming languages.
+- Combininig cases: You can use the | which is the pipe symbol to match multiple conditions at once for instance:
+```python
+match score:
+    case 80 | 81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89:
+        print("Excellent")
+    case 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79:
+        print("pass")
+    case 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69:
+        print("You can do better")
+    case 50:
+        print("Not good enough")
+    case 40:
+        print("Fail")
+    case _:
+        print("Please provide a valid score")
+```
+### Ternary expression - x if cond else y
+Python has a ternary expression, but of course it has a syntax that must be followed.
+```python
+status = "adult" if age >= 18 else "minor"
+```
+A ternary expression is officially called a conditional expression in python, it is a way to evaluate something and assign a value based on a condition using a single line of code. 
+It serves as a compat shortcut for a traditional if-else statement.
+It is read from left to right just like english: `status` is `"adult"`, if `age >= 18 `, else `"minor"`
+It is an expression and not a statement which means it produces a value you can use directly, inline, anywhere an expression is valid, inside an f-string, as part of a larger expression. For instance:
+```python
+>>> age = 15
+>>> f"You are an {'adult' if age >= 18 else 'minor'}"
+'You are a minor'
+```
+### comparison operators recap in context
+Look at the following syntax:
+```python
+score = int(input("enter your score: "))
+if score >= 70:
+    print("A")
+elif score >= 60 and score < 70:
+    print("B")
+elif score >= 50 and score < 60:
+    print("C")
+elif score >= 40 and score > 50:
+    print("D")
+else:
+    print("F")
+```
+And:
+```python
+score = 85
+
+if 90 <= score <= 100:
+    grade = "A"
+elif 80 <= score < 90:
+    grade = "B"
+elif 70 <= score < 80:
+    grade = "C"
+else:
+    grade = "F"
+```
+So instead of writing it in the first manner, you can write it in the second way and it would work just fine.

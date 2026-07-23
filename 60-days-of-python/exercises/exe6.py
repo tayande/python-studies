@@ -60,3 +60,15 @@
 # Explain in your own words why "hello".upper (no parentheses) does NOT print "HELLO" if you just type it alone in the REPL
 # answer 
 # I think that it will not work because the .upper() is a function and all functions have a way they work and how they should be worked with, and using or calling it without the parenthesis may not raise an error but it will not give you the conversion you need, rather it would provide some info about the function.
+
+score = int(input("enter your score: "))
+if score >= 70:
+    print("A")
+elif score >= 60 and score < 70:
+    print("B")
+elif score >= 50 and score < 60:
+    print("C")
+elif score >= 40 and score > 50:
+    print("D")
+else:
+    print("F")
